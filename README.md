@@ -78,11 +78,11 @@ MongoDB version: 2.5.3
     
     ## Zliczanie roznych slow
     ```bash
-        >db.text8.distinct("word").length
-        253854
+    >db.text8.distinct("word").length
+    253854
     ```
     
-## Udział procentowy (kod)
+    ## Udział procentowy (kod)
     
     ```javascript
         var totalWordCount = db.words.count()
