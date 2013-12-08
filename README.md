@@ -36,7 +36,7 @@ MongoDB version: 2.5.3
     real    14m51.329s
     user    0m42.671s
     sys     1m28.238s    
-    ``
+    ```
 ## Import danych do bazy
   
     ```bash
