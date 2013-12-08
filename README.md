@@ -5,18 +5,19 @@ MongoDB version: 2.5.3
 ```
 ## Menu
 
-- [Train](#Train)
-    - [Przygotowanie pliku](#Przygotowanie-danych-do-pliku)
-    - [Import do bazy](#Import-danych-do-bazy)
-    - [Obliczanie ilosci rekordow](#Obliczanie-ilosci-rekordow)
-    - [Zmiana ciagu tagow w tablice tagow za pomocą tego skryptu](#Zmiana-ciagu-tagow-w-tablice-tagow-za-pomocą-tego-skryptu)
-- [Text8](#Text8)
-    - [Przygotowanie danych do importu za pomoca tego](#Przygotowanie-danych-do-importu-za-pomoca-tego)
-    - [Import danych do bazy](#Import-danych-do-bazy)
-    - [Zliczanie słów](#Zliczanie-slow)
-    - [Zliczanie roznych słów](#Zliczanie-roznych-slow)
-    - [Udział procentowy (kod)](#Udział-procentowy-(kod))
-- [Geo Json](#GeoJSON)
+- [Train](#train)
+    - [Przygotowanie pliku](#przygotowanie-danych-do-importu)
+    - [Import do bazy](#import-danych-do-bazy)
+    - [Obliczanie ilosci rekordow](#obliczanie-ilosci-rekordow)
+    - [Zmiana ciagu tagow w tablice tagow za pomocą tego skryptu](#zmiana-ciagu-tagow-w-tablice-tagow-za-pomoca-tego-skryptu)
+- [Text8](#text8)
+    - [Przygotowanie danych do importu za pomoca tego](#przygotowanie-danych-do-importu-za-pomoca-tego)
+    - [Import danych do bazy](#import-danych-do-bazy-1)
+    - [Zliczanie słów](#zliczanie-slow)
+    - [Zliczanie roznych słów](#zliczanie-roznych-slow)
+    - [Udział procentowy (kod)](#Udział-procentowy-kod)
+    - [Wyniki](#wyniki)
+- [Geo Json](#geojson)
 
 
 
