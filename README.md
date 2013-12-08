@@ -125,7 +125,7 @@ MongoDB version: 2.5.3
     
     Obiekty do bazy z użyciem GeoJSON'ow pobrałem ze strony [usgs](http://geonames.usgs.gov/domestic/download_data.htm)
 
-## Modyfikacja kodu (zmiana plikow txt na jeden csv)
+    ## Modyfikacja kodu (zmiana plikow txt na jeden csv)
 
     ```bash
     $ time bash switchtocsv.sh AllStates_20131020/ stany.csv
@@ -135,5 +135,5 @@ MongoDB version: 2.5.3
     sys		0m2.168s
     
     ```
-## Import do bazy danych
+    ## Import do bazy danych
     ![Czas importu do bazy](../../images/rtomczak/import_geo.png "Czas importu do bazy")
