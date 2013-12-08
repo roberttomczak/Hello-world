@@ -40,7 +40,7 @@ MongoDB version: 2.5.3
 ## Import danych do bazy
   
     ```bash
-        $ mongoimport --type csv -c Train --file Train2.csv --headerline
+    $ mongoimport --type csv -c Train --file Train2.csv --headerline
     ```
     
     ![Zdjecie_z_importu_danych](../../images/rtomczak/Czas_zaimportowania.png "Zaimportowanie  Train'a")
@@ -59,11 +59,11 @@ MongoDB version: 2.5.3
     ## Przygotowanie danych do importu za pomoca [tego](https://github.com/roberttomczak/aggregations-2/blob/master/scripts/rtomczak/StringToJSON.sh "Program") skryptu
 
     ```bash
-        $ time bash StringToJSON.sh text8 text8.json
+    $ time bash StringToJSON.sh text8 text8.json
 
-        real    1m34.271s
-        user    0m20.201s
-        sys     0m58.584s
+    real    1m34.271s
+    user    0m20.201s
+    sys     0m58.584s
     ```
     
     ## Import danych do bazy
@@ -72,11 +72,11 @@ MongoDB version: 2.5.3
         
     ## Zliczanie slow
     ```bash
-        >db.text8.count()
-        17005207
+    >db.text8.count()
+    17005207
     ```
     
-## Zliczanie roznych slow
+    ## Zliczanie roznych slow
     ```bash
         >db.text8.distinct("word").length
         253854
