@@ -37,13 +37,13 @@ MongoDB version: 2.5.3
         sys     1m28.238s    
     ``
 
-## Import danych do bazy
+    ## Import danych do bazy
   
     ```bash
         $ mongoimport --type csv -c Train --file Train2.csv --headerline
     ```
     
-![Zdjecie_z_importu_danych](../../images/rtomczak/Czas_zaimportowania.png "Zaimportowanie  Train'a")
+    ![Zdjecie_z_importu_danych](../../images/rtomczak/Czas_zaimportowania.png "Zaimportowanie  Train'a")
   
 * b 
     ## Obliczanie ilosci rekordow
