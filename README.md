@@ -27,7 +27,8 @@ MongoDB version: 2.5.3
 
 * a 
 # Train
-## Przygotowanie danych do importu
+
+    ## Przygotowanie danych do importu
     
     ```bash
         $ time bash 2unix.sh Train.csv Train2.csv
@@ -38,9 +39,9 @@ MongoDB version: 2.5.3
 
 ## Import danych do bazy
   
-```bash
-    $ mongoimport --type csv -c Train --file Train2.csv --headerline
-```
+    ```bash
+        $ mongoimport --type csv -c Train --file Train2.csv --headerline
+    ```
     
 ![Zdjecie_z_importu_danych](../../images/rtomczak/Czas_zaimportowania.png "Zaimportowanie  Train'a")
   
