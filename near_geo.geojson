@@ -1,9 +1,9 @@
 {
-"type": "FeatureCollection",
-                                                                                
-"features": [
-{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  34.06990,  -118.40192 ] }, "properties" : { "Punkt Odniesienia" : "Punkt 1" } }
-,
-{ "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  34.0708333,  -118.4033333 ] }, "properties" : { "Punkt Znaleziony" : "Punkt 2" } }
-]
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature","geometry": { "type": "Point", "coordinates": [ -118.40192, 34.0699 ] }, "properties": { "Punkt Odniesienia": "Punkt 1" } },
+    {
+      "type": "Feature","geometry": { "type": "Point", "coordinates": [ -118.4033333, 34.0708333 ] }, "properties": { "Punkt Znaleziony": "Punkt 2" } }
+  ]
 }
