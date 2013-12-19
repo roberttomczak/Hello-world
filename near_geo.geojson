@@ -5,5 +5,5 @@
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  34.06990,  -118.40192 ] }, "properties" : { "Punkt Odniesienia" : "Punkt 1" } }
 ,
 { "type": "Feature", "geometry" : { "type" : "Point", "coordinates" : [  34.0708333,  -118.4033333 ] }, "properties" : { "Punkt Znaleziony" : "Punkt 2" } }
-
+]
 }
