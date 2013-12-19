@@ -11,15 +11,15 @@ MongoDB version: 2.5.3
     - [Obliczanie ilosci rekordow](#obliczanie-ilosci-rekordow)
     - [Zmiana ciagu tagow w tablice tagow za pomocą tego skryptu](#zmiana-ciagu-tagow-w-tablice-tagow-za-pomocą-tego-skryptu)
 - [Text8](#text8)
-    - [Przygotowanie danych do importu za pomoca tego](#przygotowanie-danych-do-importu-za-pomoca-tego-skryptu)
+    - [Przygotowanie danych do importu za pomoca skryptu](#przygotowanie-danych-do-importu-za-pomoca-tego-skryptu)
     - [Import danych do bazy](#import-danych-do-bazy-1)
     - [Zliczanie słów](#zliczanie-slow)
     - [Zliczanie roznych słów](#zliczanie-roznych-slow)
     - [Udział procentowy (kod)](#udział-procentowy-kod)
     - [Wyniki](#wyniki)
 - [Geo Json](#geojson)
-
-
+    - [Modyfikacja plikow](#modyfikacja-kodu)
+    - [Import do bazy danych](#import-do-bazy-danych)
 
 
 
@@ -132,8 +132,111 @@ MongoDB version: 2.5.3
 
     real	0m28.781s
     user	0m3.512s
-    sys		0m2.168s
+    sys     0m2.168s
     
     ```
     ## Import do bazy danych
     ![Czas importu do bazy](../../images/rtomczak/import_geo.png "Czas importu do bazy")
+    
+    ## Zmiana csv to geo-json
+    Przy użyciu [tego](../../scripts/rtomczak/make_geo_points.js "make_geo_points") skryptu zmieniłem dane dotyczące lokalizacji obiektow na bardziej dostępne dla geojson queries.
+    ![Tworzenie punktow](../../images/rtomczak/make_geo_points_img.png "Tworzenie punktow")
+    Następnie przy użyciu innego [skryptu](../../scripts/rtomczak/remove_bad_geo.js "remove_bad_geo") usunąłem rekordy ktore miały złe koordynaty lub ich nie miały.
+    ![Usuwanie niepoprawnych punktow](../../images/rtomczak/remove_bad_geo_img.png "Usuwanie niepoprawnych punktow")
+    
+    ## Dodanie indexu
+    
+    Dodanie indexu "2dsphere" do pola "loc" aby moc wykonywań zapytania na lokalizacjach obiektow
+    
+    ```bash
+    > db.allstates_geo.ensureIndex({'loc' : '2dsphere'})
+     ```
+     
+    ## Zapytania
+    
+    #### near
+        Znalezienie punktu bliskiego zdefiniowanemu punktowi
+    ```bash
+    
+    > db.allstates_geo.findOne({
+        loc : { 
+            $near : { 
+                $geometry :	{	
+				    type : "Point",
+				    coordinates : [-118.40192,34.06990]
+                }
+            }
+	    }
+	  })
+    ```
+    #### geo_within
+        Znalezienie parkow i monumentow znajdujacych sie wewnatrz zdefiniowanego wielokata
+        
+    ```bash
+    > db.allstates_geo.find({ 
+      loc : { 
+        $geoWithin : { 
+            $geometry : {
+				type : 'Polygon',
+				coordinates : [[
+					[-77.05014, 38.90251],
+					[-77.02705, 38.90251],
+					[-77.02700, 38.88757],
+					[-77.05016, 38.88713],
+					[-77.05014, 38.90251]
+				]]
+            }
+		}
+	  },
+      'type' : "Park"	 
+	  },
+	  {
+        _id: 0,
+		loc: 1,
+		name:1,
+		type : 1
+      }	
+      ).pretty()
+    ```
+    #### geo_within circle
+        Znalezienie budynkow w ustalonym obrebie ze srodkiem w zadanym punkcie
+    ```bash
+    > db.allstates_geo.find({
+      loc :
+        { $geoWithin :
+            { $center :
+                [[-73.96531, 40.78271], 0.1]
+            }
+        },
+        'type' : "Building"
+    },
+    {
+        loc: 1,
+        name:1
+    }).limit(5).pretty()
+    ```
+    #### geoIntersects
+        Znalezienie budynkow ktore przecinają zadane pole
+    ```bash
+    > db.allstates_geo.find(
+        {loc : 
+            { $geoIntersects :
+                { $geometry :
+                    {
+                        type : 'Polygon',
+                        coordinates : [[
+                            [-83.05806, 42.36855],
+                            [-83.09915, 42.35017],
+                            [-83.07857, 42.31772],
+                            [-83.03557, 42.33208],
+                            [-83.05806, 42.36855]]]
+                    }
+                }
+            },
+            'type' : "Building"
+        },
+        {
+            loc: 1,
+            name:1
+        }).pretty()
+        ```
