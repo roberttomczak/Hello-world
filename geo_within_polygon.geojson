@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+						[-77.05014, 38.90251],
+						[-77.02705, 38.90251],
+						[-77.02599, 38.88757],
+						[-77.05016, 38.88713],
+						[-77.05014, 38.90251]
+					]]
+      },
+      "properties": {
+        "Strefa Odniesienia": "Strefa 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+           -77.0305322
+           ,38.9017784
+        ]
+					
+      },
+      "properties": {
+        "Punkt Odniesienia": "Franklin Park"
+      }
+    }
+  ]
+}
