@@ -155,7 +155,7 @@ MongoDB version: 2.5.3
     ## Zapytania
     
     #### near
-        Znalezienie punktu bliskiego zdefiniowanemu punktowi
+    Znalezienie punktu bliskiego zdefiniowanemu punktowi
     ```bash
     
     > db.allstates_geo.findOne({
@@ -170,7 +170,7 @@ MongoDB version: 2.5.3
 	  })
     ```
     #### geo_within
-        Znalezienie parkow i monumentow znajdujacych sie wewnatrz zdefiniowanego wielokata
+    Znalezienie parkow i monumentow znajdujacych sie wewnatrz zdefiniowanego wielokata
         
     ```bash
     > db.allstates_geo.find({ 
@@ -199,7 +199,7 @@ MongoDB version: 2.5.3
       ).pretty()
     ```
     #### geo_within circle
-        Znalezienie budynkow w ustalonym obrebie ze srodkiem w zadanym punkcie
+    Znalezienie budynkow w ustalonym obrebie ze srodkiem w zadanym punkcie
     ```bash
     > db.allstates_geo.find({
       loc :
@@ -216,7 +216,7 @@ MongoDB version: 2.5.3
     }).limit(5).pretty()
     ```
     #### geoIntersects
-        Znalezienie budynkow ktore przecinają zadane pole
+    Znalezienie budynkow ktore przecinają zadane pole
     ```bash
     > db.allstates_geo.find(
         {loc : 
