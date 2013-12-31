@@ -169,6 +169,8 @@ MongoDB version: 2.5.3
 	    }
 	  })
     ```
+    Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_near.geojson)
+    
     #### geo_within
     Znalezienie parkow i monumentow znajdujacych sie wewnatrz zdefiniowanego wielokata
         
@@ -198,6 +200,8 @@ MongoDB version: 2.5.3
       }	
       ).pretty()
     ```
+    Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_within_polygon.geojson)
+    
     #### geo_within circle
     Znalezienie budynkow w ustalonym obrebie ze srodkiem w zadanym punkcie
     ```bash
@@ -215,6 +219,7 @@ MongoDB version: 2.5.3
         name:1
     }).limit(5).pretty()
     ```
+    Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_within_circle.geojson)
     #### geoIntersects
     Znalezienie budynkow ktore przecinają zadane pole
     ```bash
@@ -240,3 +245,4 @@ MongoDB version: 2.5.3
             name:1
         }).pretty()
         ```
+        Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_intersects.geojson)
