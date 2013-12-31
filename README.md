@@ -246,3 +246,4 @@ MongoDB version: 2.5.3
         }).pretty()
     ```
     Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_intersects.geojson)
+    
