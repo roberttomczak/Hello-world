@@ -244,5 +244,5 @@ MongoDB version: 2.5.3
             loc: 1,
             name:1
         }).pretty()
-        ```
-        Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_intersects.geojson)
+    ```
+    Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_intersects.geojson)
