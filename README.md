@@ -246,4 +246,5 @@ MongoDB version: 2.5.3
         }).pretty()
     ```
     Mapka z wynikiem znajduje sie [tutaj](../../data/rtomczak/geo_intersects.geojson)
-    Pliki z geojson'ami zostały zrobione przy pomocy [skryptu w pythonie](../../scripts/rtomczak/zapytania.py)(Trochę rozległy, możliwe poprawki)
+    
+    Pliki z geojson'ami zostały zrobione przy pomocy [skryptu w pythonie](../../scripts/rtomczak/zapytania.py) (Skrypt trochę rozległy, możliwe poprawki)
