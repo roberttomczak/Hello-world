@@ -147,3 +147,48 @@ Wynik wywolania:
 { "_id" : 3.5, "value" : 23 }
 ...
 ```
+
+___
+### Map Reduce 3 - ilosc lotnisk w danym dst
+
+Funkcja mapujaca:
+
+```js
+var map3 = function() { 
+    emit(this.DST, 1); 
+};
+```
+
+Funkcja redukujaca:
+
+```js
+var reduce2 = function(key,val) {
+    var count = 0;
+    for(i = 0; i < val.length; i++) {
+        count += val[i];
+    }
+    return count;
+}
+```
+
+Funkcja mapReduce :
+
+```js
+var result3 = db.airports.mapReduce( 
+    map3, 
+    reduce3, 
+    { out : "dst" } 
+);
+```
+
+Wynik wywolania:
+
+```js
+{ "_id" : "A", "value" : 1857 }
+{ "_id" : "E", "value" : 1759 }
+{ "_id" : "N", "value" : 1257 }
+{ "_id" : "O", "value" : 211 }
+{ "_id" : "S", "value" : 388 }
+{ "_id" : "U", "value" : 2135 }
+{ "_id" : "Z", "value" : 52 }
+```
