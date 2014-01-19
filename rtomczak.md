@@ -149,8 +149,17 @@ Wynik wywolania:
 ```
 
 ___
-### Map Reduce 3 - ilosc lotnisk w danym dst
+### Map Reduce 3 - ilosc lotnisk nalezacych do danego typu zmiany czasu 
 
+E dla Europy
+A dla USA i Kanady
+S dla Poludniowej Ameryki
+O dla Australii
+Z dla Nowej Zelandii
+N dla Braku Daylight Saving Time
+U dla Braku Danych
+
+Dla lepszego wyjasnienia czym roznia sie dane typy info pod [linkiem]("http://openflights.org/help/time.html") w dziale DST
 Funkcja mapujaca:
 
 ```js
