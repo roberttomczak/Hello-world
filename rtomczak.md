@@ -31,7 +31,7 @@ Przykladowy wpis :
 }
 ```
 
-### Map Reduce 2 - ilosc lotnisk w danej strefie czasowej
+### Map Reduce 1 - ilosc lotnisk w danej strefie czasowej
 
 Funkcja mapujaca:
 
