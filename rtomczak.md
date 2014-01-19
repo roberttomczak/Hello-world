@@ -125,6 +125,7 @@ var result2 = db.airports.mapReduce(
 Wynik wywolania:
 
 ```json
+> db.tmz.find()
 { "_id" : -12, "value" : 2 }
 { "_id" : -11, "value" : 12 }
 { "_id" : -10, "value" : 79 }
@@ -151,7 +152,7 @@ Wynik wywolania:
 ___
 ### Map Reduce 3 - ilosc lotnisk nalezacych do danego typu zmiany czasu 
 
-Typy zmiany czasu 
+Typy zmiany czasu :
 
 * E dla Europy
 * A dla USA i Kanady
@@ -196,6 +197,7 @@ var result3 = db.airports.mapReduce(
 Wynik wywolania:
 
 ```js
+> db.dst.find()
 { "_id" : "A", "value" : 1857 }
 { "_id" : "E", "value" : 1759 }
 { "_id" : "N", "value" : 1257 }
