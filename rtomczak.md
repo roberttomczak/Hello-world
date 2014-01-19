@@ -63,7 +63,7 @@ var result1 = db.airports.mapReduce(
 );
 ```
 
-Wynik wykolania:
+Wynik wywolania:
 
 ```json
 > db.kraje.find()
@@ -87,5 +87,63 @@ Wynik wykolania:
 { "_id" : "Barbados", "value" : 1 }
 { "_id" : "Belarus", "value" : 9 }
 { "_id" : "Belgium", "value" : 32 }
+...
+```
+___
+### Map Reduce 2 - ilosc lotnisk w danej strefie czasowej
+
+Funkcja mapujaca:
+
+```js
+var map2 = function() {
+    emit(this.Timezone, 1);
+};
+```
+
+Funkcja redukujaca:
+
+```js
+var reduce2 = function(key,val) {
+    var count = 0;
+    for(i = 0; i < val.length; i++) {
+        count += val[i];
+    }
+    return count;
+}
+```
+
+Funkcja mapReduce :
+
+```js
+var result2 = db.airports.mapReduce(
+    map2,
+    reduce2,
+    { out : "tmz"}
+);
+```
+
+Wynik wywolania:
+
+```json
+{ "_id" : -12, "value" : 2 }
+{ "_id" : -11, "value" : 12 }
+{ "_id" : -10, "value" : 79 }
+{ "_id" : -9.5, "value" : 3 }
+{ "_id" : -9, "value" : 233 }
+{ "_id" : -8, "value" : 260 }
+{ "_id" : -7, "value" : 263 }
+{ "_id" : -6, "value" : 551 }
+{ "_id" : -5, "value" : 905 }
+{ "_id" : -4.5, "value" : 1 }
+{ "_id" : -4, "value" : 401 }
+{ "_id" : -3.5, "value" : 1 }
+{ "_id" : -3, "value" : 323 }
+{ "_id" : -2, "value" : 19 }
+{ "_id" : -1, "value" : 21 }
+{ "_id" : 0, "value" : 402 }
+{ "_id" : 1, "value" : 1339 }
+{ "_id" : 2, "value" : 533 }
+{ "_id" : 3, "value" : 281 }
+{ "_id" : 3.5, "value" : 23 }
 ...
 ```
