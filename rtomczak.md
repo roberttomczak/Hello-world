@@ -3,7 +3,15 @@ ___
 
 #### Robert Tomczak
 
-Baza zawiera 7663 wpisow dotyczacych lotnisk na swiecie
+Po sciagnieciu pliku .pac zmieniamy na rozszerzenie csv i używamy na nim [skrypt]("../../scripts/rtomczak/zmiana.py") w pythonie
+
+Następnie plik ```lotniska.csv``` jest gotowy do importu
+
+```bash
+mongoimport -d airports -c airports --type csv --file lotniska.csv
+```
+
+Baza ta zawiera 7663 wpisow dotyczacych lotnisk na swiecie
 
 Przykladowy wpis :
 
