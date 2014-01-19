@@ -151,15 +151,18 @@ Wynik wywolania:
 ___
 ### Map Reduce 3 - ilosc lotnisk nalezacych do danego typu zmiany czasu 
 
-E dla Europy
-A dla USA i Kanady
-S dla Poludniowej Ameryki
-O dla Australii
-Z dla Nowej Zelandii
-N dla Braku Daylight Saving Time
-U dla Braku Danych
+Typy zmiany czasu 
 
-Dla lepszego wyjasnienia czym roznia sie dane typy info pod [linkiem](http://openflights.org/help/time.html) w dziale DST
+* E dla Europy
+* A dla USA i Kanady
+* S dla Poludniowej Ameryki
+* O dla Australii
+* Z dla Nowej Zelandii
+* N dla Braku Daylight Saving Time
+* U dla Braku Danych
+
+Dla lepszego wyjasnienia czym roznia sie dane typy info pod [linkiem](http://openflights.org/help/time.html) w dziale Daylight Savings Time (DST)
+
 Funkcja mapujaca:
 
 ```js
