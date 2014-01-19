@@ -1,4 +1,4 @@
-# Lista lotnisk na swiecie - Mapreduce z [tych danych]("http://openflights.org/data.html")
+# Lista lotnisk na swiecie - Mapreduce z [tych danych](http://openflights.org/data.html)
 ___
 
 #### Robert Tomczak
@@ -159,7 +159,7 @@ Z dla Nowej Zelandii
 N dla Braku Daylight Saving Time
 U dla Braku Danych
 
-Dla lepszego wyjasnienia czym roznia sie dane typy info pod [linkiem]("http://openflights.org/help/time.html") w dziale DST
+Dla lepszego wyjasnienia czym roznia sie dane typy info pod [linkiem](http://openflights.org/help/time.html) w dziale DST
 Funkcja mapujaca:
 
 ```js
