@@ -31,17 +31,17 @@ Przykladowy wpis :
 }
 ```
 
-### Map Reduce 1 - ilosc lotnisk w każdym kraju
+### Map Reduce 2 - ilosc lotnisk w danej strefie czasowej
 
-Funkcja mapujaca :
+Funkcja mapujaca:
 
 ```js
 var map1 = function() {
-    emit(this.Country, 1);
+    emit(this.Timezone, 1);
 };
 ```
 
-Funkcja redukujaca :
+Funkcja redukujaca:
 
 ```js
 var reduce1 = function(key,val) {
@@ -53,71 +53,12 @@ var reduce1 = function(key,val) {
 }
 ```
 
-Funkcja mapReduce
+Funkcja mapReduce :
 
 ```js
 var result1 = db.airports.mapReduce(
     map1,
     reduce1,
-    { out : "kraje"}
-);
-```
-
-Wynik wywolania:
-
-```json
-> db.kraje.find()
-{ "_id" : "Afghanistan", "value" : 21 }
-{ "_id" : "Albania", "value" : 1 }
-{ "_id" : "Algeria", "value" : 44 }
-{ "_id" : "American Samoa", "value" : 3 }
-{ "_id" : "Angola", "value" : 26 }
-{ "_id" : "Anguilla", "value" : 1 }
-{ "_id" : "Antarctica", "value" : 18 }
-{ "_id" : "Antigua and Barbuda", "value" : 2 }
-{ "_id" : "Argentina", "value" : 103 }
-{ "_id" : "Armenia", "value" : 4 }
-{ "_id" : "Aruba", "value" : 1 }
-{ "_id" : "Australia", "value" : 256 }
-{ "_id" : "Austria", "value" : 28 }
-{ "_id" : "Azerbaijan", "value" : 8 }
-{ "_id" : "Bahamas", "value" : 34 }
-{ "_id" : "Bahrain", "value" : 2 }
-{ "_id" : "Bangladesh", "value" : 13 }
-{ "_id" : "Barbados", "value" : 1 }
-{ "_id" : "Belarus", "value" : 9 }
-{ "_id" : "Belgium", "value" : 32 }
-...
-```
-___
-### Map Reduce 2 - ilosc lotnisk w danej strefie czasowej
-
-Funkcja mapujaca:
-
-```js
-var map2 = function() {
-    emit(this.Timezone, 1);
-};
-```
-
-Funkcja redukujaca:
-
-```js
-var reduce2 = function(key,val) {
-    var count = 0;
-    for(i = 0; i < val.length; i++) {
-        count += val[i];
-    }
-    return count;
-}
-```
-
-Funkcja mapReduce :
-
-```js
-var result2 = db.airports.mapReduce(
-    map2,
-    reduce2,
     { out : "tmz"}
 );
 ```
@@ -150,7 +91,7 @@ Wynik wywolania:
 ```
 
 ___
-### Map Reduce 3 - ilosc lotnisk nalezacych do danego typu zmiany czasu 
+### Map Reduce 2 - ilosc lotnisk nalezacych do danego typu zmiany czasu 
 
 Typy zmiany czasu :
 
@@ -167,7 +108,7 @@ Dla lepszego wyjasnienia czym roznia sie dane typy info pod [linkiem](http://ope
 Funkcja mapujaca:
 
 ```js
-var map3 = function() { 
+var map2 = function() { 
     emit(this.DST, 1); 
 };
 ```
@@ -187,9 +128,9 @@ var reduce2 = function(key,val) {
 Funkcja mapReduce :
 
 ```js
-var result3 = db.airports.mapReduce( 
-    map3, 
-    reduce3, 
+var result2 = db.airports.mapReduce( 
+    map2, 
+    reduce2, 
     { out : "dst" } 
 );
 ```
